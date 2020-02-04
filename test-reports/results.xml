@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="0" hostname="DESKTOP-FRE319I" name="pytest" skipped="0" tests="1" time="0.148" timestamp="2020-02-03T18:24:50.650917"><testcase classname="test.TestApp" file="test.py" line="12" name="test_0010_add" time="0.000"></testcase></testsuite></testsuites>
