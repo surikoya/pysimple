@@ -6,13 +6,13 @@ pipeline {
     stages {
       stage('Build') {
         steps {
-          sh 'python -m py_compile src/*.py
+          sh 'python -m py_compile src/*.py'
         }
       }
 
       stage('Test') {
         steps {
-	  sh 'py.test --verbose --junit-xml test-reports/results.xml   
+	  sh 'py.test --verbose --junit-xml test-reports/results.xml'   
 	}
 	post {
 	  always {
@@ -23,11 +23,11 @@ pipeline {
 
       stage('Deliver') {
         steps {
-	  sh 'pyinstaller --onefile src/*.py
+	  sh 'pyinstaller --onefile src/*.py'
 	}
 	post {
 	  success {
-	    archiveArtifacts 'dist/final-artifact
+	    archiveArtifacts 'dist/final-artifact'
 	  } 
 	}
       }
