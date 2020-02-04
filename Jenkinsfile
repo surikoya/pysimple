@@ -27,10 +27,15 @@ pipeline {
 	}
 	post {
 	  success {
-	    archiveArtifacts 'dist/final-artifact'
+	    archiveArtifacts 'dist/app'
 	  } 
 	}
       }
 
-    }
-}
+      stage('Publish') {
+        steps {
+	  withCredentials([string(credentialsId: 'artuser', variable: 'creds')]) {
+	    sh 'curl -u${creds} -T dist/app "${ARTIFACTORY_URL}/artifactory/generic-local/app'
+	  }
+	}
+      }	
