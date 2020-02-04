@@ -6,7 +6,7 @@ pipeline {
     stages {
       stage('Build') {
         steps {
-          sh 'python -m py_compile src/*.py'
+          sh 'python -m py_compile src/app.py'
         }
       }
 
